@@ -1,9 +1,14 @@
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\com\practica\tecnostore\TecnoStore.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Dao\ConexionDB.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Administrador.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Categoriagama.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Celular.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\CelularNoEncontradoException.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Cliente.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\ClienteNoEncontradoException.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\DatosInvalidosException.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\GenerarId.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\ItemVenta.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Marca.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Persona.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\StockInsuficienteException.java
