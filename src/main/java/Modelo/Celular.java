@@ -4,7 +4,7 @@ public class Celular {
     private final int id;
     private final Marca marca;
     private final String modelo;
-    private final String sistemaOp;
+    private String sistemaOp;
     private Categoriagama gama;
     private double precio;
     private int stock;
@@ -34,6 +34,11 @@ public class Celular {
     public String getSistemaOp() {
         return sistemaOp;
     }
+
+    public void setSistemaOp(String sistemaOp) {
+        this.sistemaOp = sistemaOp;
+    }
+    
 
     public Categoriagama getGama() {
         return gama;

@@ -3,15 +3,15 @@ package Modelo;
 public abstract class Persona {
     protected int id;
     protected String nombre;
-    protected String cedula;
+    protected String identificacion;
     protected String correo;
     protected String telefono;
     protected String password;
 
-    public Persona(int id, String nombre, String cedula, String correo, String telefono, String password) {
+    public Persona(int id, String nombre, String identificacion, String correo, String telefono, String password) {
         this.id = id;
         this.nombre = nombre;
-        this.cedula = cedula;
+        this.identificacion = identificacion;
         this.correo = correo;
         this.telefono = telefono;
         this.password = password;
@@ -29,8 +29,8 @@ public abstract class Persona {
         this.nombre = nombre;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getIdentificacion() {
+        return identificacion;
     }
 
     public String getCorreo() {
