@@ -1,6 +1,6 @@
 package Modelo;
 
-public enum Categoriagama {
+public enum CategoriaGama {
     ALTA,
     MEDIA,
     BAJA

@@ -16,7 +16,7 @@ public class ConexionDB {
         // nadie puede hacer new ConexionDB() por ser privado
     }
 
-    public static ConexionDB getInstancia() {
+    public static ConexionDB getDatos() {
         if (datos == null) {
             datos = new ConexionDB();
         }

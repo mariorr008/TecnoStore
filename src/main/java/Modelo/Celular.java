@@ -4,12 +4,12 @@ public class Celular {
     private final int id;
     private final Marca marca;
     private final String modelo;
-    private String sistemaOp;
-    private Categoriagama gama;
+    private SistemaOperativo sistemaOp;
+    private CategoriaGama gama;
     private double precio;
     private int stock;
 
-    public Celular(int id, Marca marca, String modelo, String sistemaOp, Categoriagama gama, double precio, int stock) {
+    public Celular(int id, Marca marca, String modelo, SistemaOperativo sistemaOp, CategoriaGama gama, double precio, int stock) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -31,16 +31,16 @@ public class Celular {
         return modelo;
     }
 
-    public String getSistemaOp() {
+    public SistemaOperativo getSistemaOp() {
         return sistemaOp;
     }
 
-    public void setSistemaOp(String sistemaOp) {
+    public void setSistemaOp(SistemaOperativo sistemaOp) {
         this.sistemaOp = sistemaOp;
     }
     
 
-    public Categoriagama getGama() {
+    public CategoriaGama getGama() {
         return gama;
     }
 
@@ -52,7 +52,7 @@ public class Celular {
         return stock;
     }
 
-    public void setGama(Categoriagama gama) {
+    public void setGama(CategoriaGama gama) {
         this.gama = gama;
     }
 
