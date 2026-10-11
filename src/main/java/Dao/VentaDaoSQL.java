@@ -83,7 +83,7 @@ public class VentaDaoSQL implements VentaDao{
     }
 
     @Override
-    public List<Venta> listarPorClientes(int id_Cliente) {
+    public List<Venta> listarPorCliente(int id_Cliente) {
         String sql = "{call listar_ventas_por_cliente(?)}";
         List<Venta> lista = new ArrayList<>();
         try (Connection con = ConexionDB.getDatos().getConexion();

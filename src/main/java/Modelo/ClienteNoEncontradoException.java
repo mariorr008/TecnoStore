@@ -1,4 +1,4 @@
-package modelo;
+package Modelo;
 
 public class ClienteNoEncontradoException extends RuntimeException {
     public ClienteNoEncontradoException(String mensaje) {

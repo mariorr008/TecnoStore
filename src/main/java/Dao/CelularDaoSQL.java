@@ -32,7 +32,20 @@ public class CelularDaoSQL implements CelularDao{
 
     @Override
     public Celular buscarPorId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "{call buscar_celular_por_id(?)}";
+        try (Connection con = ConexionDB.getDatos().getConexion();
+             CallableStatement cs = con.prepareCall(sql)) {
+
+            cs.setInt(1, id);
+            try (ResultSet rs = cs.executeQuery()) {
+                if (rs.next()) {
+                    return mapear(rs);
+                }
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error al buscar celular", e);
+        }
     }
 
     @Override

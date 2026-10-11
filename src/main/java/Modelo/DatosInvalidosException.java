@@ -1,4 +1,4 @@
-package modelo;
+package Modelo;
 
 public class DatosInvalidosException extends RuntimeException {
     public DatosInvalidosException(String mensaje) {
