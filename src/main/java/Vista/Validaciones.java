@@ -1,57 +1,139 @@
-package vista;
+package Vista;
 
 import java.util.Scanner;
 
 public class Validaciones {
 
-    public String validarTexto(String mensaje) {
-        boolean validacion;
-        String texto = "";
-        Scanner x = new Scanner(System.in);
-        int contador = 0;
+    private final Scanner X = new Scanner(System.in);
+
+    // ============ NÚMEROS ============
+    public int pedirEntero(String mensaje) {
+        System.out.print(mensaje);
+        while (!X.hasNextInt()) {
+            System.out.println("Error: se espera un número entero");
+            X.next();
+            System.out.print(mensaje);
+        }
+        int valor = X.nextInt();
+        X.nextLine();
+        return valor;
+    }
+
+    public int pedirEnteroPositivo(String mensaje) {
+        int valor;
         do {
-            validacion = true;
-            System.out.println(mensaje);
-            texto = x.nextLine();
-            for (int i = 0; i < texto.length(); i++) {
-                contador += texto.charAt(i) == ' ' ? 1 : 0;
-                if (!Character.isLetter(texto.charAt(i)) || texto.charAt(i) != ' ') {
-                    if (texto.charAt(i) == ' ' && i == 0) {
-                        validacion = false;
-                        break;
-                    }
-                }
+            valor = pedirEntero(mensaje);
+            if (valor <= 0) {
+                System.out.println("Debe ser mayor que 0");
             }
-        } while (validacion == false);
+        } while (valor <= 0);
+        return valor;
+    }
+
+    public double pedirDouble(String mensaje) {
+        System.out.print(mensaje);
+        while (!X.hasNextDouble()) {
+            System.out.println("Error: se espera un número decimal");
+            X.next();
+            System.out.print(mensaje);
+        }
+        double valor = X.nextDouble();
+        X.nextLine();
+        return valor;
+    }
+
+    public double pedirDoublePositivo(String mensaje) {
+        double valor;
+        do {
+            valor = pedirDouble(mensaje);
+            if (valor <= 0) {
+                System.out.println("Debe ser mayor que 0");
+            }
+        } while (valor <= 0);
+        return valor;
+    }
+
+    // ============ TEXTO ============
+    public String pedirTexto(String mensaje) {
+        String texto;
+        do {
+            System.out.print(mensaje);
+            texto = X.nextLine().trim();
+            if (texto.isEmpty()) {
+                System.out.println("No puede estar vacío");
+            }
+        } while (texto.isEmpty());
         return texto;
     }
 
-    public double validarDecimal(String mensaje) {
-        System.out.println(mensaje);
-        Scanner x = new Scanner(System.in);
-        while (!x.hasNextDouble()) {
-            System.out.println("Error, se espera un valor decimal");
-        }
-        return x.nextDouble();
+    public String pedirSoloLetras(String mensaje) {
+        String texto;
+        do {
+            texto = pedirTexto(mensaje);
+            if (!texto.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+                System.out.println("Solo se permiten letras y espacios");
+                texto = "";
+            }
+        } while (texto.isEmpty());
+        return texto;
     }
 
-    public int validarEntero(String mensaje) {
-        Scanner x = new Scanner(System.in);
-        System.out.println(mensaje);
-        while (!x.hasNextInt()) {
-            System.out.println("Error, se espera un valor entero");
-            x.next();
-        }
-        return x.nextInt();
+    // ============ FORMATOS ============
+    public String pedirCorreo(String mensaje) {
+        String correo;
+        do {
+            correo = pedirTexto(mensaje);
+            if (!correo.matches("^[\\w.+-]+@[\\w-]+\\.[\\w.]+$")) {
+                System.out.println("Correo inválido (ej: nombre@dominio.com)");
+                correo = "";
+            }
+        } while (correo.isEmpty());
+        return correo;
     }
 
-    public long validarEnteroGrande(String mensaje) {
-        Scanner x = new Scanner(System.in);
-        System.out.println(mensaje);
-        while (!x.hasNextLong()) {
-            System.out.println("Error, se espera un valor entero");
-            x.next();
-        }
-        return x.nextLong();
+    public String pedirIdentificacion(String mensaje) {
+        String id;
+        do {
+            id = pedirTexto(mensaje);
+            if (!id.matches("\\d{6,10}")) {
+                System.out.println("Identificación inválida (6 a 10 dígitos)");
+                id = "";
+            }
+        } while (id.isEmpty());
+        return id;
+    }
+
+    public String pedirTelefono(String mensaje) {
+        String tel;
+        do {
+            tel = pedirTexto(mensaje);
+            if (!tel.matches("\\d{7,10}")) {
+                System.out.println("Teléfono inválido (7 a 10 dígitos)");
+                tel = "";
+            }
+        } while (tel.isEmpty());
+        return tel;
+    }
+
+    public String pedirPassword(String mensaje) {
+        String pass;
+        do {
+            pass = pedirTexto(mensaje);
+            if (pass.length() < 4) {
+                System.out.println("La contraseña debe tener al menos 4 caracteres");
+                pass = "";
+            }
+        } while (pass.isEmpty());
+        return pass;
+    }
+
+    // ============ CONFIRMACIÓN ============
+    public boolean pedirSiNo(String mensaje) {
+        String resp;
+        do {
+            System.out.print(mensaje + " (s/n): ");
+            resp = X.nextLine().trim().toLowerCase();
+        } while (!resp.equals("s") && !resp.equals("n"));
+        return resp.equals("s");
     }
 }
