@@ -119,6 +119,7 @@ public class VentaDaoSQL implements VentaDao{
 
     
         // Carga los ítems de una venta
+    @Override
     public List<ItemVenta> listarItemsDeVenta(int idVenta) {
         String sql = "{call listar_detalle_por_venta(?)}";
         List<ItemVenta> items = new ArrayList<>();

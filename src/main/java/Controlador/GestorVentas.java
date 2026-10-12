@@ -1,4 +1,4 @@
-package controlador;
+package Controlador;
 
 import Dao.CelularDao;
 import Dao.VentaDao;
@@ -86,6 +86,6 @@ public class GestorVentas {
     }
 
     public List<ItemVenta> listarItems(int idVenta) {
-        return ((Dao.VentaDaoSQL) ventaDAO).listarItemsDeVenta(idVenta);
+        return ventaDAO.listarItemsDeVenta(idVenta);
     }
 }

@@ -1,4 +1,4 @@
-package controlador;
+package Controlador;
 
 import Dao.ClienteDao;
 import java.util.List;

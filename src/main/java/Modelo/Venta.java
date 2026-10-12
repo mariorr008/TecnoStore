@@ -45,7 +45,7 @@ public class Venta {
         
     public void agregarItem(ItemVenta item){
         items.add(item);
-            recalcularTotal();
+        recalcularTotal();
     }
         
     private void recalcularTotal() {

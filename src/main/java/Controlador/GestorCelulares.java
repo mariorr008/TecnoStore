@@ -3,9 +3,11 @@ package Controlador;
 import Dao.CelularDao;
 import Dao.MarcaDao;
 import java.util.List;
+import Modelo.CategoriaGama;
 import Modelo.Celular;
 import Modelo.GenerarId;
 import Modelo.Marca;
+import Modelo.SistemaOperativo;
 import Modelo.CelularNoEncontradoException;
 import Modelo.DatosInvalidosException;
 
@@ -19,35 +21,27 @@ public class GestorCelulares {
         this.marcaDAO = marcaDAO;
     }
 
-    public void registrar(Celular celular) {
-        if (celular.getPrecio() <= 0) {
-            throw new DatosInvalidosException("El precio debe ser positivo");
-        }
-        if (celular.getStock() < 0) {
-            throw new DatosInvalidosException("El stock no puede ser negativo");
-        }
+    // ============ CELULAR ============
+    public void registrar(Marca marca, String modelo, SistemaOperativo so,
+                          CategoriaGama gama, double precio, int stock) {
 
-        int id;
-        do {
-            id = GenerarId.generar();
-        } while (celularDAO.existe(id));
-
-        // Como Celular tiene id final, creamos uno nuevo con el id generado
-        Celular nuevo = new Celular(
-            id,
-            celular.getMarca(),
-            celular.getModelo(),
-            celular.getSistemaOp(),
-            celular.getGama(),
-            celular.getPrecio(),
-            celular.getStock()
+        Celular nuevo = FactoryCelular.crear(
+            marca, modelo, so, gama, precio, stock, celularDAO
         );
         celularDAO.guardar(nuevo);
     }
 
     public void modificar(Celular celular) {
         if (!celularDAO.existe(celular.getId())) {
-            throw new CelularNoEncontradoException("No existe el celular con id " + celular.getId());
+            throw new CelularNoEncontradoException(
+                "No existe el celular con id " + celular.getId()
+            );
+        }
+        if (celular.getPrecio() <= 0) {
+            throw new DatosInvalidosException("El precio debe ser positivo");
+        }
+        if (celular.getStock() < 0) {
+            throw new DatosInvalidosException("El stock no puede ser negativo");
         }
         celularDAO.guardar(celular);
     }
@@ -101,5 +95,13 @@ public class GestorCelulares {
 
     public List<Marca> listarMarcas() {
         return marcaDAO.listarTodas();
+    }
+
+    public Marca buscarMarcaPorId(int id) {
+        Marca m = marcaDAO.buscarPorId(id);
+        if (m == null) {
+            throw new DatosInvalidosException("No existe la marca con id " + id);
+        }
+        return m;
     }
 }
