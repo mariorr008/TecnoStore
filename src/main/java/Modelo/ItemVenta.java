@@ -38,7 +38,7 @@ public class ItemVenta {
     @Override
     public String toString() {
         return """
-               ====ItemVenta====
+               =====ITEM VENTA=====
                Marca:       %s
                Modelo:      %s
                Cantidad:    %s

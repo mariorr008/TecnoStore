@@ -75,6 +75,7 @@ public class Celular {
     @Override
     public String toString() {
         return """
+               =====CELULAR=====
                ID:      %s
                Marca:   %s
                Modelo:  %s

@@ -71,6 +71,7 @@ public class Validaciones {
         do {
             texto = pedirTexto(mensaje);
             if (!texto.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+                //matches: comprueba si un texto cumple un patrón específico
                 System.out.println("Solo se permiten letras y espacios");
                 texto = "";
             }
