@@ -1,4 +1,9 @@
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\com\practica\tecnostore\TecnoStore.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\ControladorAdmin.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\ControladorCelulares.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\ControladorClientes.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\ControladorPrincipal.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\ControladorVentas.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\FactoryCelular.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\GestorCelulares.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\GestorClientes.java
@@ -8,6 +13,7 @@ C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Con
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\ReporteVentasPorMes.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Controlador\StrategyReporte.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Dao\AdministradorDao.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Dao\AdministradorDaoSQL.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Dao\CelularDao.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Dao\CelularDaoSQL.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Dao\ClienteDao.java
@@ -31,4 +37,15 @@ C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Mod
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\SistemaOperativo.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\StockInsuficienteException.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Modelo\Venta.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\ArchivoUtils.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\IngresoCelular.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\IngresoDatos.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\IngresoVenta.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MenuAdmin.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MenuCelulares.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MenuCliente.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MenuPrincipal.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MenuVentas.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MostrarDatos.java
+C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\MostrarVentas.java
 C:\Users\mario\OneDrive\Documentos\NetBeansProjects\TecnoStore\src\main\java\Vista\Validaciones.java

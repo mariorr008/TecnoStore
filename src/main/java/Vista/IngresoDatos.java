@@ -29,4 +29,12 @@ public class IngresoDatos {
 
         return new Cliente(0, nombre, identificacion, correo, telefono, password);
     }
+    
+    public int pedirIdCliente() {
+    return v.pedirEnteroPositivo("ID del cliente: ");
+}
+
+    public int pedirIdVenta() {
+        return v.pedirEnteroPositivo("ID de la venta: ");
+    }
 }

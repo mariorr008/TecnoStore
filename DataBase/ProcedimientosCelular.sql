@@ -1,4 +1,4 @@
-USE TecnologiaStorePablo;
+USE TecnoStoreMario;
 DELIMITER //
 
 
@@ -48,7 +48,7 @@ END //
 
 CREATE PROCEDURE listar_celulares_por_gama(IN p_gama VARCHAR(10))
 BEGIN
-    SELECT c.*, m.nombre_marca as marca
+    SELECT c.*, m.nombre_marca
     FROM celulares c
     INNER JOIN marca m ON c.id_marca = m.id
     WHERE c.gama = p_gama;

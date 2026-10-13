@@ -41,3 +41,5 @@ CREATE PROCEDURE existe_venta(IN p_id INT)
 BEGIN
     SELECT COUNT(*) AS total FROM ventas WHERE id = p_id;
 END //
+
+DELIMITER ;

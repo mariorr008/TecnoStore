@@ -83,4 +83,12 @@ public class IngresoCelular {
     public int pedirStock() {
         return v.pedirEnteroPositivo("Stock: ");
     }
+    
+    public int pedirIdCelular() {
+        return v.pedirEnteroPositivo("ID del celular: ");
+    }
+
+    public int pedirIdMarca() {
+        return v.pedirEnteroPositivo("ID de la marca: ");
+    }
 }

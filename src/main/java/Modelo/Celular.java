@@ -3,7 +3,7 @@ package Modelo;
 public class Celular {
     private final int id;
     private final Marca marca;
-    private final String modelo;
+    private String modelo;
     private SistemaOperativo sistemaOp;
     private CategoriaGama gama;
     private double precio;
@@ -31,6 +31,10 @@ public class Celular {
         return modelo;
     }
 
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+    
     public SistemaOperativo getSistemaOp() {
         return sistemaOp;
     }

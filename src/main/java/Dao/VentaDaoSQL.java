@@ -144,7 +144,7 @@ public class VentaDaoSQL implements VentaDao{
         Cliente cliente = clienteDAO.buscarPorId(idCliente);
 
         Venta venta = new Venta(id, cliente);
-        // Si se necesitan los items se llama a listarItemsDeVenta(id).
+        venta.setTotal(rs.getDouble("total")); 
         return venta;
     }
 

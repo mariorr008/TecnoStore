@@ -36,7 +36,7 @@ public class ReporteTop3Vendidos implements StrategyReporte{
             //entrySet abre el map para el stream
             .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
             .limit(3)
-            .forEach(e -> System.out.println(e.getKey() + " → " + e.getValue() + " vendidos"));
+            .forEach(e -> System.out.println(e.getKey() + " -> " + e.getValue() + " vendidos"));
             //e: representa cada entrada o cada clave valor del mapa
     }
 }

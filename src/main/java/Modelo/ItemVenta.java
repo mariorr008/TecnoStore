@@ -39,10 +39,10 @@ public class ItemVenta {
     public String toString() {
         return """
                =====ITEM VENTA=====
-               Marca:       %s
-               Modelo:      %s
-               Cantidad:    %s
-               Subtotal:    %s
-               """.formatted(celular.getMarca(),celular.getModelo(),cantidad,subtotal);
+               Marca:     %s
+               Modelo:    %s
+               Cantidad:  %d
+               Subtotal:  $%.2f
+               """.formatted(celular.getMarca().getNombreMarca(), celular.getModelo(), cantidad, subtotal);
     }
 }

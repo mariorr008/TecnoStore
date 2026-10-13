@@ -10,14 +10,18 @@ public class MarcaDaoSQL implements MarcaDao{
     @Override
     public void guardar(Marca marca) {
         String sql = "{call guardar_marca(?, ?)}";
+        System.out.println(">>> Intentando guardar: " + marca.getId() + " - " + marca.getNombreMarca());
         try (Connection con = ConexionDB.getDatos().getConexion();
-             CallableStatement cs = con.prepareCall(sql)){
-            
+             CallableStatement cs = con.prepareCall(sql)) {
+
             cs.setInt(1, marca.getId());
             cs.setString(2, marca.getNombreMarca());
-            
-        }catch (SQLException e){
-            throw new RuntimeException("Error al guardar la marca", e);
+            cs.execute();
+            System.out.println(">>> Guardado OK");
+
+        } catch (SQLException e) {
+            System.out.println(">>> ERROR: " + e.getMessage());
+            throw new RuntimeException("Error al guardar marca", e);
         }
     }
 

@@ -60,8 +60,8 @@ public class Venta {
                =====VENTA=====
                ID:      %s
                Fecha:   %s
-               Cliente: %s  
-               Total    %s
-               """.formatted(id,fecha,cliente,total);
+               Cliente: %s
+               Total:   $%.2f
+               """.formatted(id, fecha, cliente.getNombre(), total);
     }
 }

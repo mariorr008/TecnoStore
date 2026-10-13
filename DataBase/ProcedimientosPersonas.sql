@@ -82,6 +82,13 @@ BEGIN
 END //
 
 
+CREATE PROCEDURE listar_administradores()
+BEGIN
+    SELECT p.*
+    FROM persona p
+    INNER JOIN administrador a ON p.id = a.id_persona;
+END //
+
 
 -- Verificar si existe persona por id
 CREATE PROCEDURE existe_persona(IN p_id INT)

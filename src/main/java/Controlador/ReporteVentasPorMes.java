@@ -29,7 +29,7 @@ public class ReporteVentasPorMes implements StrategyReporte{
         System.out.println("=== VENTAS TOTALES POR MES ===");
         porMes.entrySet().stream()
             .sorted(Map.Entry.comparingByKey())
-            .forEach(e -> System.out.println(e.getKey() + " → $" + e.getValue()));
+            .forEach(e -> System.out.printf("%s -> $%.2f%n", e.getKey(), e.getValue()));
     }
     
 }

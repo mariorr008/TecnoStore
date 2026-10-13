@@ -1,4 +1,4 @@
-package vista;
+package Vista;
 
 import java.util.List;
 import Modelo.ItemVenta;
@@ -13,7 +13,11 @@ public class MostrarVentas {
             return;
         }
         for (Venta v : ventas) {
-            System.out.println(v);
+            System.out.printf("Venta #%d | %s | Cliente: %s | Total: $%.2f%n",
+                v.getId(),
+                v.getFecha(),
+                v.getCliente().getNombre(),
+                v.getTotal());
         }
     }
 
@@ -23,16 +27,19 @@ public class MostrarVentas {
                 Cliente: %s
                 Fecha: %s
                 Productos:
-                %s
-                Total: $%s
                 """.formatted(
                     venta.getId(),
                     venta.getCliente().getNombre(),
-                    venta.getFecha(),
-                    items.stream()
-                            .map(item -> "  - " + item)
-                            .collect(java.util.stream.Collectors.joining("\n")),
-                    venta.getTotal()
-                ));
+                    venta.getFecha()));
+
+        for (ItemVenta item : items) {
+            System.out.printf("  - %s %s x%d = $%.2f%n",
+                item.getCelular().getMarca().getNombreMarca(),
+                item.getCelular().getModelo(),
+                item.getCantidad(),
+                item.getSubtotal());
+        }
+
+        System.out.printf("Total: $%.2f%n", venta.getTotal());
     }
 }
