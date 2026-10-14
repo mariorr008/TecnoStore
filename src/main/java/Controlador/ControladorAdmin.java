@@ -54,7 +54,6 @@ public class ControladorAdmin {
             switch (op) {
                 case 1 -> mostrar.mostrarClientes(gestor.listarTodos());
                 case 2 -> buscarCliente();
-                case 3 -> eliminarCliente();
                 case 0 -> System.out.println("Volviendo...");
                 default -> System.out.println("Opción inválida");
             }

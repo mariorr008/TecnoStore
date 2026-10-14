@@ -28,7 +28,6 @@ public class MenuAdmin {
             ===== GESTIÓN CLIENTES =====
             1. Listar clientes
             2. Buscar cliente por ID
-            3. Eliminar cliente
             0. Volver
             """);
         return v.pedirEntero("Opción: ");
