@@ -4,6 +4,7 @@ controlador\GestorCelulares.class
 Modelo\Marca.class
 Modelo\Administrador.class
 Modelo\Venta.class
+vista\DatosVenta.class
 Dao\CelularDaoSQL.class
 controlador\StrategyReporte.class
 controlador\ControladorCelulares.class
@@ -24,6 +25,7 @@ Modelo\GenerarId.class
 vista\MostrarDatos.class
 vista\MenuCliente.class
 vista\IngresoVenta.class
+Modelo\ReporteVenta.class
 vista\IngresoDatos.class
 Dao\ConexionDB.class
 vista\MenuCelulares.class

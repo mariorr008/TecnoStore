@@ -9,8 +9,7 @@ import Vista.Validaciones;
 public class ControladorClientes {
 
     private final CelularDaoSQL celularDAO = new CelularDaoSQL();
-    private final GestorCelulares gestorCelulares =
-        new GestorCelulares(celularDAO, new Dao.MarcaDaoSQL());
+    private final GestorCelulares gestorCelulares = new GestorCelulares(celularDAO, new Dao.MarcaDaoSQL());
 
     private final MenuCliente menu;
     private final MostrarDatos mostrarDatos;

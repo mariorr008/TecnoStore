@@ -1,68 +1,67 @@
 package Vista;
 
 import Dao.VentaDao;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
 import Modelo.ItemVenta;
+import Modelo.ReporteVenta;
 import Modelo.Venta;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArchivoUtils {
 
-    private static final String ARCHIVO = "reporte_ventas.txt";
+    public static void generarReporteVentas(
+            List<Venta> ventas, VentaDao ventaDAO) {
 
-    public static void generarReporteVentas(List<Venta> ventas, VentaDao ventaDAO) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ARCHIVO))) {
+        List<ReporteVenta> reportes = new ArrayList<>();
 
-            writer.write("=========================================");
-            writer.newLine();
-            writer.write("       REPORTE DE VENTAS - TECNOSTORE");
-            writer.newLine();
-            writer.write("=========================================");
-            writer.newLine();
-            writer.newLine();
+        for (Venta venta : ventas) {
+            List<ItemVenta> items =
+                    ventaDAO.listarItemsDeVenta(venta.getId());
 
-            if (ventas.isEmpty()) {
-                writer.write("No hay ventas registradas.");
-                writer.newLine();
-                return;
+            List<String> productos = new ArrayList<>();
+
+            for (ItemVenta item : items) {
+                productos.add(item.toString());
             }
 
-            double totalGeneral = 0;
+            ReporteVenta reporte = new ReporteVenta(
+                venta.getId(),
+                venta.getFecha().toString(),
+                venta.getCliente().getNombre(),
+                productos,
+                venta.getTotal()
+            );
 
-            for (Venta venta : ventas) {
-                writer.write("Venta #" + venta.getId());
-                writer.newLine();
-                writer.write("Fecha: " + venta.getFecha());
-                writer.newLine();
-                writer.write("Cliente: " + venta.getCliente().getNombre());
-                writer.newLine();
-                writer.write("Productos:");
-                writer.newLine();
-
-                List<ItemVenta> items = ventaDAO.listarItemsDeVenta(venta.getId());
-                for (ItemVenta item : items) {
-                    writer.write("  - " + item);
-                    writer.newLine();
-                }
-
-                writer.write("Total: $" + venta.getTotal());
-                writer.newLine();
-                writer.write("-----------------------------------------");
-                writer.newLine();
-
-                totalGeneral += venta.getTotal();
-            }
-
-            writer.newLine();
-            writer.write("TOTAL GENERAL: $" + totalGeneral);
-            writer.newLine();
-
-            System.out.println("Archivo generado: " + ARCHIVO);
-
-        } catch (IOException e) {
-            throw new RuntimeException("Error al generar el archivo", e);
+            reportes.add(reporte);
         }
+
+        DatosVenta datosVenta = new DatosVenta();
+        datosVenta.guardarVentas(reportes);
+
+        System.out.println("Archivo ventas.dat generado");
     }
+    
+    public static void leerReporteVentas() {
+    DatosVenta datos = new DatosVenta();
+    List<ReporteVenta> ventas = datos.obtenerVentas();
+
+    if (ventas.isEmpty()) {
+        System.out.println("No hay ventas guardadas en el archivo.");
+        return;
+    }
+
+    for (ReporteVenta venta : ventas) {
+        System.out.println("\n========== VENTA #" + venta.getId() + " ==========");
+        System.out.println("Fecha: " + venta.getFecha());
+        System.out.println("Cliente: " + venta.getCliente());
+        System.out.println("Productos:");
+
+        for (String producto : venta.getProductos()) {
+            System.out.println("  - " + producto);
+        }
+
+        System.out.println("Total: $" + venta.getTotal());
+        System.out.println("==================================");
+    }
+}
 }

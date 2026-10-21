@@ -17,6 +17,7 @@ public class MenuAdmin {
             3. Ver todas las ventas
             4. Ver reportes
             5. Generar archivo de reportes
+            6. Leer archivo de reportes
             0. Cerrar sesión
             """);
         return v.pedirEntero("Opción: ");

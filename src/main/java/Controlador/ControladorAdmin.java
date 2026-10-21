@@ -4,6 +4,7 @@ import Dao.ClienteDaoSQL;
 import Modelo.Administrador;
 import Modelo.Cliente;
 import Modelo.ClienteNoEncontradoException;
+import Vista.ArchivoUtils;
 import Vista.IngresoDatos;
 import Vista.MenuAdmin;
 import Vista.MostrarDatos;
@@ -40,6 +41,7 @@ public class ControladorAdmin {
                 case 3 -> controladorVentas.iniciarVentas();
                 case 4 -> controladorVentas.iniciarReportes();
                 case 5 -> controladorVentas.generarArchivo();
+                case 6 -> ArchivoUtils.leerReporteVentas();
                 case 0 -> System.out.println("Cerrando sesión...");
                 default -> System.out.println("Opción inválida");
             }
